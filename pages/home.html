@@ -3,9 +3,55 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>home</title>
+    <title>Home | Payoo Mobile Bank</title>
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/e54598ab59.js" crossorigin="anonymous"></script>
 </head>
-<body>
-    <h1>Home</h1>
+<body class="bg-[#F4F5F7] h-[100vh]">
+    <header class="max-w-md mx-auto flex gap-2 items-center p-4 pt-6 border-b-1 border-gray-200 bg-white">
+        <img src="../assets/Group.png" alt="logo" class="w-14">
+        <div class="grow">
+            <h2 class="text-lg font-bold mb-1">$<span>45000</span></h2>
+            <p class="text-sm text-[rgba(8,8,8,0.5)]">Available Balance</p>
+        </div>
+        <button class="btn btn-outline border-gray-200 text-[rgba(8,8,8,0.5)]"> <i class="fa-solid fa-arrow-right-from-bracket rotate-180 text-gray-600"></i> Log Out</button>
+    </header>
+    <main class="max-w-md mx-auto">
+        <section class="rounded-b-3xl bg-white">
+            <article class="p-4 pt-8">
+                <h2 class="text-2xl font-bold mb-2">🔥 Welcome to Payooo!</h2>
+                <p class="text-[rgba(8,8,8,0.5)]">Enjoy easy and convenient financial services with us. Cashout charge is
+                    low and affordable</p>
+                <section class="grid grid-cols-3 gap-4 pt-6 pb-2">
+                    <div class="border border-gray-200 rounded-lg py-4 px-0.5 text-center">
+                        <img src="../assets/wallet1.png" alt="logo" class="mx-auto">
+                        <p class="text-sm mt-2 text-[rgba(8,8,8,0.7)]">Add Money</p>
+                    </div>
+                    <div class="border border-gray-200 rounded-lg py-4 px-0.5 text-center">
+                        <img src="../assets/send1.png" alt="logo" class="mx-auto">
+                        <p class="text-sm mt-2 text-[rgba(8,8,8,0.7)]">Cash Out</p>
+                    </div>
+                    <div class="border border-gray-200 rounded-lg py-4 px-0.5 text-center">
+                        <img src="../assets/money1.png" alt="logo" class="mx-auto">
+                        <p class="text-sm mt-2 text-[rgba(8,8,8,0.7)]">Transfer Money</p>
+                    </div>
+                    <div class="border border-gray-200 rounded-lg py-4 px-0.5 text-center">
+                        <img src="../assets/bonus1.png" alt="logo" class="mx-auto">
+                        <p class="text-sm mt-2 text-[rgba(8,8,8,0.7)]">Get Bonus</p>
+                    </div>
+                    <div class="border border-gray-200 rounded-lg py-4 px-0.5 text-center">
+                        <img src="../assets/purse1.png" alt="logo" class="mx-auto">
+                        <p class="text-sm mt-2 text-[rgba(8,8,8,0.7)]">Pay Bill</p>
+                    </div>
+                    <div class="border border-gray-200 rounded-lg py-4 px-0.5 text-center">
+                        <img src="../assets/transaction1.png" alt="logo" class="mx-auto">
+                        <p class="text-sm mt-2 text-[rgba(8,8,8,0.7)]">Transaction</p>
+                    </div>
+                </section>
+            </article>
+        </section>
+    </main>
 </body>
 </html>
