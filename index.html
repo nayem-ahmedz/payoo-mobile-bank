@@ -10,15 +10,19 @@
 </head>
 <body class="bg-[#F4F5F7] outfit-font h-[100vh] flex justify-center items-center">
     <main>
-        <section class="bg-white p-8 rounded-xl w-xs">
-            <form>
+        <section>
+            <div class="bg-[url('assets/bg.png')] bg-cover w-2xs mx-auto h-32 flex justify-center items-center">
+                <img src="assets/Group.png" alt="login logo">
+            </div>
+            <form class="bg-white p-8 rounded-xl w-xs">
                 <label for="mobile" class="font-medium">Mobile Number</label>
-                <input type="text" id="mobile" placeholder="Enter Your Number" class="input block my-2 rounded-3xl bg-[#F4F5F7] border-0" />
+                <input type="text" id="mobile" placeholder="Enter Your Number" class="input block mt-2 mb-4 rounded-3xl bg-[#F4F5F7] border-0" />
                 <label for="pin" class="font-medium">4 Digit Pin</label>
                 <input type="text" id="pin" placeholder="Enter 4 Digit Pin" class="input block my-2 rounded-3xl bg-[#F4F5F7] border-0" />
-                <button class="btn btn-primary mt-3 rounded-3xl w-full">Primary</button>
+                <button id="login-button" class="btn btn-primary mt-3 rounded-3xl w-full text-xl font-semibold bg-[#0874F2]">Login</button>
             </form>
         </section>
     </main>
+    <script src="scripts/login.js"></script>
 </body>
 </html>
