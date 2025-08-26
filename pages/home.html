@@ -13,7 +13,7 @@
     <header class="max-w-md mx-auto flex gap-2 items-center p-4 pt-6 border-b-1 border-gray-200 bg-white">
         <img src="../assets/Group.png" alt="logo" class="w-14">
         <div class="grow">
-            <h2 class="text-lg font-bold mb-1">$<span>45000</span></h2>
+            <h2 class="text-lg font-bold mb-1">$<span id="available-balance">45000</span></h2>
             <p class="text-sm text-[rgba(8,8,8,0.5)]">Available Balance</p>
         </div>
         <button class="btn btn-outline border-gray-200 text-[rgba(8,8,8,0.5)]"> <i class="fa-solid fa-arrow-right-from-bracket rotate-180 text-gray-600"></i> Log Out</button>
@@ -55,24 +55,28 @@
         <section class="p-4">
             <h2 class="font-semibold text-lg my-4">Add Money</h2>
             <div class="bg-white p-6 rounded-3xl">
-                <form>
-                    <label for="bank" class="font-medium">Select A Bank</label>
-                    <select class="select block w-full rounded-4xl my-3 bg-[#F4F5F7] border-none text-base py-4 px-5 h-auto">
-                        <option disabled selected>Select Bank</option>
+                <form autocomplete="off">
+                    <label for="bank-name" class="font-medium">Select A Bank</label>
+                    <select class="select block w-full rounded-4xl my-3 bg-[#F4F5F7] border-none text-base py-4 px-5 h-auto" id="bank-name">
+                        <option value="select" disabled selected>Select Bank</option>
                         <option value="ab bank">AB Bank</option>
                         <option value="islami bank">Islami Bank</option>
                         <option value="dutch bangla bank">Dutch Bangla Bank</option>
                     </select>
+
                     <label for="account-number" class="font-medium">Bank Account Number</label>
-                    <input type="number" id="account-number" class="input block w-full rounded-4xl my-3 bg-[#F4F5F7] border-none text-base py-4 px-5 h-auto" required placeholder="Enter 11 Digit account number" />
+                    <input type="text" id="account-number" class="input block w-full rounded-4xl my-3 bg-[#F4F5F7] border-none text-base py-4 px-5 h-auto" placeholder="Enter 11 Digit account number" pattern="[0-9]*" maxlength="11" required />
+                    
                     <label for="amount" class="font-medium">Amount to Add</label>
-                    <input type="number" id="amount" class="input block w-full rounded-4xl my-3 bg-[#F4F5F7] border-none text-base py-4 px-5 h-auto" required placeholder="Add Amount to withdrae" />
+                    <input type="number" id="amount" class="input block w-full rounded-4xl my-3 bg-[#F4F5F7] border-none text-base py-4 px-5 h-auto" placeholder="Add Amount to withdrae" required/>
+                    
                     <label for="pincode" class="font-medium">Pin Number</label>
-                    <input type="number" class="input block w-full rounded-4xl my-3 bg-[#F4F5F7] border-none text-base py-4 px-5 h-auto" required placeholder="Enter 11 Digit account number" />
+                    <input type="password" id="pincode" class="input block w-full rounded-4xl my-3 bg-[#F4F5F7] border-none text-base py-4 px-5 h-auto" placeholder="Enter 4 digit pin number" pattern="[0-9]*" maxlength="4" required />
                     <input type="submit" id="add-money-button" class="btn btn-primary mt-3 rounded-4xl w-full text-xl font-semibold bg-[#0874F2] py-3 h-auto" value="Add Money" />
                 </form>
             </div>
         </section>
     </main>
+    <script src="../scripts/add-money.js"></script>
 </body>
 </html>
