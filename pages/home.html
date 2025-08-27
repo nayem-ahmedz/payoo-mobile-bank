@@ -6,7 +6,7 @@
     <title>Home | Payoo Mobile Bank</title>
     <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="../style.css">
     <script src="https://kit.fontawesome.com/e54598ab59.js" crossorigin="anonymous"></script>
 </head>
 <body class="bg-[#F4F5F7] pb-20">
@@ -24,12 +24,12 @@
                 <h2 class="text-2xl font-bold mb-2">🔥 Welcome to Payooo!</h2>
                 <p class="text-[rgba(8,8,8,0.5)]">Enjoy easy and convenient financial services with us. Cashout charge is
                     low and affordable</p>
-                <section class="grid grid-cols-3 gap-4 pt-6 pb-2">
-                    <div class="border border-gray-200 rounded-lg py-4 px-0.5 text-center">
+                <section class="grid grid-cols-3 gap-4 pt-6 pb-2 toggle-menue">
+                    <div class="border border-gray-200 rounded-lg py-4 px-0.5 text-center" id="add-money-toggler">
                         <img src="../assets/wallet1.png" alt="logo" class="mx-auto">
                         <p class="text-sm mt-2 text-[rgba(8,8,8,0.7)]">Add Money</p>
                     </div>
-                    <div class="border border-gray-200 rounded-lg py-4 px-0.5 text-center">
+                    <div class="border border-gray-200 rounded-lg py-4 px-0.5 text-center" id="cash-out-toggler">
                         <img src="../assets/send1.png" alt="logo" class="mx-auto">
                         <p class="text-sm mt-2 text-[rgba(8,8,8,0.7)]">Cash Out</p>
                     </div>
@@ -52,7 +52,7 @@
                 </section>
             </article>
         </section>
-        <section class="p-4">
+        <section id="add-money-section" class="p-4">
             <h2 class="font-semibold text-lg my-4">Add Money</h2>
             <div class="bg-white p-6 rounded-3xl">
                 <form autocomplete="off">
@@ -76,7 +76,24 @@
                 </form>
             </div>
         </section>
+        <section id="cash-out-section" class="p-4 hidden">
+            <h2 class="font-semibold text-lg my-4">Cash Out</h2>
+            <div class="bg-white p-6 rounded-3xl">
+                <form autocomplete="off">
+                    <label for="agent-number" class="font-medium">Agent Number</label>
+                    <input type="text" id="agent-number" class="input block w-full rounded-4xl my-3 bg-[#F4F5F7] border-none text-base py-4 px-5 h-auto" placeholder="Enter 11 Digit number" pattern="[0-9]*" maxlength="11" required />
+                    
+                    <label for="withdraw-amount" class="font-medium">Amount</label>
+                    <input type="number" id="withdraw-amount" class="input block w-full rounded-4xl my-3 bg-[#F4F5F7] border-none text-base py-4 px-5 h-auto" placeholder="Add Amount to withdrae" required/>
+                    
+                    <label for="pincode2" class="font-medium">Pin Number</label>
+                    <input type="password" id="pincode2" class="input block w-full rounded-4xl my-3 bg-[#F4F5F7] border-none text-base py-4 px-5 h-auto" placeholder="Enter 4 digit pin number" pattern="[0-9]*" maxlength="4" required />
+                    <input type="submit" id="withdraw-button" value="Withdraw Money" class="btn btn-primary mt-3 rounded-4xl w-full text-xl font-semibold bg-[#0874F2] py-3 h-auto" />
+                </form>
+            </div>
+        </section>
     </main>
-    <script src="../scripts/add-money.js"></script>
+    <script src="../scripts/toggler-feature.js"></script>
+    <script src="../scripts/money-operation.js"></script>
 </body>
 </html>
