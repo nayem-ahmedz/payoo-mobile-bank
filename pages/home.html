@@ -25,34 +25,34 @@
                 <p class="text-[rgba(8,8,8,0.5)]">Enjoy easy and convenient financial services with us. Cashout charge is
                     low and affordable</p>
                 <section class="grid grid-cols-3 gap-4 pt-6 pb-2 toggle-menue">
-                    <div class="border border-gray-200 rounded-lg py-4 px-0.5 text-center" id="add-money-toggler">
+                    <div class="border border-gray-200 rounded-lg py-4 px-0.5 text-center toggler active-toggler" id="add-money-toggler">
                         <img src="../assets/wallet1.png" alt="logo" class="mx-auto">
                         <p class="text-sm mt-2 text-[rgba(8,8,8,0.7)]">Add Money</p>
                     </div>
-                    <div class="border border-gray-200 rounded-lg py-4 px-0.5 text-center" id="cash-out-toggler">
+                    <div class="border border-gray-200 rounded-lg py-4 px-0.5 text-center toggler" id="cash-out-toggler">
                         <img src="../assets/send1.png" alt="logo" class="mx-auto">
                         <p class="text-sm mt-2 text-[rgba(8,8,8,0.7)]">Cash Out</p>
                     </div>
-                    <div class="border border-gray-200 rounded-lg py-4 px-0.5 text-center">
+                    <div class="border border-gray-200 rounded-lg py-4 px-0.5 text-center toggler" id="transfer-toggler">
                         <img src="../assets/money1.png" alt="logo" class="mx-auto">
                         <p class="text-sm mt-2 text-[rgba(8,8,8,0.7)]">Transfer Money</p>
                     </div>
-                    <div class="border border-gray-200 rounded-lg py-4 px-0.5 text-center">
+                    <div class="border border-gray-200 rounded-lg py-4 px-0.5 text-center toggler" id="bonus-toggler">
                         <img src="../assets/bonus1.png" alt="logo" class="mx-auto">
                         <p class="text-sm mt-2 text-[rgba(8,8,8,0.7)]">Get Bonus</p>
                     </div>
-                    <div class="border border-gray-200 rounded-lg py-4 px-0.5 text-center">
+                    <div class="border border-gray-200 rounded-lg py-4 px-0.5 text-center toggler" id="bill-toggler">
                         <img src="../assets/purse1.png" alt="logo" class="mx-auto">
                         <p class="text-sm mt-2 text-[rgba(8,8,8,0.7)]">Pay Bill</p>
                     </div>
-                    <div class="border border-gray-200 rounded-lg py-4 px-0.5 text-center">
+                    <div class="border border-gray-200 rounded-lg py-4 px-0.5 text-center toggler" id="transaction-toggler">
                         <img src="../assets/transaction1.png" alt="logo" class="mx-auto">
                         <p class="text-sm mt-2 text-[rgba(8,8,8,0.7)]">Transaction</p>
                     </div>
                 </section>
             </article>
         </section>
-        <section id="add-money-section" class="p-4">
+        <section id="add-money-section" class="p-4 forms">
             <h2 class="font-semibold text-lg my-4">Add Money</h2>
             <div class="bg-white p-6 rounded-3xl">
                 <form autocomplete="off">
@@ -76,7 +76,7 @@
                 </form>
             </div>
         </section>
-        <section id="cash-out-section" class="p-4 hidden">
+        <section id="cash-out-section" class="p-4 hidden forms">
             <h2 class="font-semibold text-lg my-4">Cash Out</h2>
             <div class="bg-white p-6 rounded-3xl">
                 <form autocomplete="off">
@@ -84,12 +84,73 @@
                     <input type="text" id="agent-number" class="input block w-full rounded-4xl my-3 bg-[#F4F5F7] border-none text-base py-4 px-5 h-auto" placeholder="Enter 11 Digit number" pattern="[0-9]*" maxlength="11" required />
                     
                     <label for="withdraw-amount" class="font-medium">Amount</label>
-                    <input type="number" id="withdraw-amount" class="input block w-full rounded-4xl my-3 bg-[#F4F5F7] border-none text-base py-4 px-5 h-auto" placeholder="Add Amount to withdrae" required/>
+                    <input type="number" id="withdraw-amount" class="input block w-full rounded-4xl my-3 bg-[#F4F5F7] border-none text-base py-4 px-5 h-auto" placeholder="Add Amount to withdraw" required/>
                     
                     <label for="pincode2" class="font-medium">Pin Number</label>
                     <input type="password" id="pincode2" class="input block w-full rounded-4xl my-3 bg-[#F4F5F7] border-none text-base py-4 px-5 h-auto" placeholder="Enter 4 digit pin number" pattern="[0-9]*" maxlength="4" required />
                     <input type="submit" id="withdraw-button" value="Withdraw Money" class="btn btn-primary mt-3 rounded-4xl w-full text-xl font-semibold bg-[#0874F2] py-3 h-auto" />
                 </form>
+            </div>
+        </section>
+        <section id="transfer-section" class="p-4 hidden forms">
+            <h2 class="font-semibold text-lg my-4">Transfer Money</h2>
+            <div class="bg-white p-6 rounded-3xl">
+                <form autocomplete="off">
+                    <label for="transfer-number" class="font-medium">User Account Number</label>
+                    <input type="text" id="transfer-number" class="input block w-full rounded-4xl my-3 bg-[#F4F5F7] border-none text-base py-4 px-5 h-auto" placeholder="Enter 11 Digit number" pattern="[0-9]*" maxlength="11" required />
+                    
+                    <label for="transfer-amount" class="font-medium">Amount</label>
+                    <input type="number" id="transfer-amount" class="input block w-full rounded-4xl my-3 bg-[#F4F5F7] border-none text-base py-4 px-5 h-auto" placeholder="Enter amount to transfer" required/>
+                    
+                    <label for="pincode3" class="font-medium">Pin Number</label>
+                    <input type="password" id="pincode3" class="input block w-full rounded-4xl my-3 bg-[#F4F5F7] border-none text-base py-4 px-5 h-auto" placeholder="Enter 4 digit pin number" pattern="[0-9]*" maxlength="4" required />
+                    <input type="submit" id="transfer-button" value="Send Now" class="btn btn-primary mt-3 rounded-4xl w-full text-xl font-semibold bg-[#0874F2] py-3 h-auto" />
+                </form>
+            </div>
+        </section>
+        <section id="bonus-section" class="p-4 hidden forms">
+            <h2 class="font-semibold text-lg my-4">Get Bonus</h2>
+            <div class="bg-white p-6 rounded-3xl">
+                <form autocomplete="off">
+                    <label for="bonus-coupon" class="font-medium">Enter Bonus Coupon</label>
+                    <input type="text" id="bonus-coupon" class="input block w-full rounded-4xl my-3 bg-[#F4F5F7] border-none text-base py-4 px-5 h-auto" placeholder="Enter your coupon" required />
+                    
+                    <label for="pincode4" class="font-medium">Pin Number</label>
+                    <input type="password" id="pincode4" class="input block w-full rounded-4xl my-3 bg-[#F4F5F7] border-none text-base py-4 px-5 h-auto" placeholder="Enter 4 digit pin number" pattern="[0-9]*" maxlength="4" required />
+                    <input type="submit" id="bonus-button" value="Get Bonus" class="btn btn-primary mt-3 rounded-4xl w-full text-xl font-semibold bg-[#0874F2] py-3 h-auto" />
+                </form>
+            </div>
+        </section>
+        <section id="bill-section" class="p-4 hidden forms">
+            <h2 class="font-semibold text-lg my-4">Pay Bill</h2>
+            <div class="bg-white p-6 rounded-3xl">
+                <form autocomplete="off">
+                    <label for="bill-type" class="font-medium">Select Bill Type</label>
+                    <select class="select block w-full rounded-4xl my-3 bg-[#F4F5F7] border-none text-base py-4 px-5 h-auto" id="bill-type">
+                        <option value="select" disabled selected>Select a type</option>
+                        <option value="electricity">Electricity</option>
+                        <option value="water">Water</option>
+                        <option value="internet">Internet</option>
+                    </select>
+                    <label for="biller-account" class="font-medium">Biller AccountNumber</label>
+                    <input type="text" id="biller-account" class="input block w-full rounded-4xl my-3 bg-[#F4F5F7] border-none text-base py-4 px-5 h-auto" placeholder="Enter Biller account number" pattern="[0-9]*" maxlength="11" required />
+                    
+                    <label for="bill-amount" class="font-medium">Amount to Pay</label>
+                    <input type="number" id="bill-amount" class="input block w-full rounded-4xl my-3 bg-[#F4F5F7] border-none text-base py-4 px-5 h-auto" placeholder="Add Amount to pay" required/>
+                    
+                    <label for="pincode5" class="font-medium">Pin Number</label>
+                    <input type="password" id="pincode5" class="input block w-full rounded-4xl my-3 bg-[#F4F5F7] border-none text-base py-4 px-5 h-auto" placeholder="Enter 4 digit pin number" pattern="[0-9]*" maxlength="4" required />
+                    <input type="submit" id="billpay-button" value="Pay Now" class="btn btn-primary mt-3 rounded-4xl w-full text-xl font-semibold bg-[#0874F2] py-3 h-auto" />
+                </form>
+            </div>
+        </section>
+        <section id="transaction-section" class="p-4 hidden forms">
+            <h2 class="font-semibold text-lg my-4">Transaction</h2>
+            <div class="bg-white p-6 rounded-3xl mb-4">
+                <p>Transaction 1</p>
+            </div>
+            <div class="bg-white p-6 rounded-3xl">
+                <p>Transaction 2</p>
             </div>
         </section>
     </main>

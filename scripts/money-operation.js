@@ -64,11 +64,11 @@ function getInputNumber(id){
 
 // function to set and get Inner Text
 function setInnerText(id, value){
-    const element = document.getElementById(id);
+    const element = getElement(id);
     element.innerText = value;
 }
 function getInnerText(id){
-    const element = document.getElementById(id);
+    const element = getElement(id);
     const value = element.innerText;
     return value;
 }

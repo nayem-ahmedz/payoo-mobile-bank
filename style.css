@@ -15,6 +15,10 @@
   cursor: pointer;
 }
 .toggle-menue > div:hover{
+  background-color: rgba(8, 116, 242, 0.15);
+  border: 1px solid #0874F2;
+}
+.active-toggler{
   background-color: rgba(8, 116, 242, 0.1);
   border: 1px solid #0874F2;
 }
