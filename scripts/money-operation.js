@@ -3,10 +3,10 @@ const userPinCode = 1234;
 
 document.getElementById('add-money-button').addEventListener('click', function(event){
     event.preventDefault();
-    const bankName = document.getElementById('bank-name').value;
-    const accountNumber = document.getElementById('account-number').value.trim();
-    const amount = Number(document.getElementById('amount').value);
-    const pinCode = Number(document.getElementById('pincode').value);
+    const bankName = getInputValue('bank-name');
+    const accountNumber = getInputValue('account-number');
+    const amount = getInputNumber('amount');
+    const pinCode = getInputNumber('pincode');
     
     if(bankName === 'select' || !accountNumber || !amount || !pinCode){
         alert('Please fill in the boxs with valid input');
@@ -20,16 +20,16 @@ document.getElementById('add-money-button').addEventListener('click', function(e
         alert('Invalid Pin');
         return;
     }
-    const availableBal = document.getElementById('available-balance');
-    let updatedAvBal = Number(availableBal.innerText) + amount;
-    availableBal.innerText = updatedAvBal;
+    const availableBal = getInnerText('available-balance');
+    let updatedAvBal = Number(availableBal) + amount;
+    setInnerText('available-balance', updatedAvBal);
 });
 
 document.getElementById('withdraw-button').addEventListener('click', function(e){
     e.preventDefault();
-    const agentNumber = document.getElementById('agent-number').value.trim();
-    const amount = Number(document.getElementById('withdraw-amount').value);
-    const pinCode = Number(document.getElementById('pincode2').value);
+    const agentNumber = getInputValue('agent-number');
+    const amount = getInputNumber('withdraw-amount');
+    const pinCode = getInputNumber('pincode2');
     if(!agentNumber || !amount || !pinCode){
         alert('Please fill in the boxs with valid input');
         return;
@@ -42,7 +42,33 @@ document.getElementById('withdraw-button').addEventListener('click', function(e)
         alert('Invalid Pin');
         return;
     }
-    const availableBal = document.getElementById('available-balance');
-    let updatedAvBal = Number(availableBal.innerText) - amount;
-    availableBal.innerText = updatedAvBal;
+    const availableBal = getInnerText('available-balance');
+    let updatedAvBal = Number(availableBal) - amount;
+    setInnerText('available-balance', updatedAvBal);
 });
+
+// function to get element, input value and input value in Number
+function getElement(id){
+    const element = document.getElementById(id);
+    return element;
+}
+function getInputValue(id){
+    const element = getElement(id);
+    return element.value.trim();
+}
+function getInputNumber(id){
+    const value = getInputValue(id);
+    const numberValue = Number(value);
+    return isNaN(numberValue) ? null : numberValue;
+}
+
+// function to set and get Inner Text
+function setInnerText(id, value){
+    const element = document.getElementById(id);
+    element.innerText = value;
+}
+function getInnerText(id){
+    const element = document.getElementById(id);
+    const value = element.innerText;
+    return value;
+}
