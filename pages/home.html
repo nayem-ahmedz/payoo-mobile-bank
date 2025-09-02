@@ -55,7 +55,7 @@
         <section id="add-money-section" class="p-4 forms">
             <h2 class="font-semibold text-lg my-4">Add Money</h2>
             <div class="bg-white p-6 rounded-3xl">
-                <form autocomplete="off">
+                <form autocomplete="off" id="add-money-form">
                     <label for="bank-name" class="font-medium">Select A Bank</label>
                     <select class="select block w-full rounded-4xl my-3 bg-[#F4F5F7] border-none text-base py-4 px-5 h-auto" id="bank-name">
                         <option value="select" disabled selected>Select Bank</option>
@@ -79,7 +79,7 @@
         <section id="cash-out-section" class="p-4 hidden forms">
             <h2 class="font-semibold text-lg my-4">Cash Out</h2>
             <div class="bg-white p-6 rounded-3xl">
-                <form autocomplete="off">
+                <form autocomplete="off" id="cash-out-form">
                     <label for="agent-number" class="font-medium">Agent Number</label>
                     <input type="text" id="agent-number" class="input block w-full rounded-4xl my-3 bg-[#F4F5F7] border-none text-base py-4 px-5 h-auto" placeholder="Enter 11 Digit number" pattern="[0-9]*" maxlength="11" required />
                     
@@ -95,7 +95,7 @@
         <section id="transfer-section" class="p-4 hidden forms">
             <h2 class="font-semibold text-lg my-4">Transfer Money</h2>
             <div class="bg-white p-6 rounded-3xl">
-                <form autocomplete="off">
+                <form autocomplete="off" id="transfer-money-form">
                     <label for="transfer-number" class="font-medium">User Account Number</label>
                     <input type="text" id="transfer-number" class="input block w-full rounded-4xl my-3 bg-[#F4F5F7] border-none text-base py-4 px-5 h-auto" placeholder="Enter 11 Digit number" pattern="[0-9]*" maxlength="11" required />
                     
