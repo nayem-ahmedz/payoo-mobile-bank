@@ -1,5 +1,5 @@
-// default pincode
-const userPinCode = 1234;
+// welcome username
+document.querySelector('#username').innerText = localStorage.getItem('name');
 
 // add money system
 document.getElementById('add-money-button').addEventListener('click', function(event){
@@ -16,7 +16,7 @@ document.getElementById('add-money-button').addEventListener('click', function(e
         if(validateAccount(accountNumber) && validateAmount(amount) && validatePin(pinCode)){
             const availableBal = Number(getInnerText('available-balance')); // get available bal / DOM
             const updatedAvBal = availableBal + amount;
-            setInnerText('available-balance', updatedAvBal); // set updated balance in DOM
+            updateBalance(updatedAvBal); // set updated balance in DOM
             getElement('add-money-form').reset(); // resetting the form after succesfull operation
             alert(`Add Money $${amount} is succesfull, current balance is $${updatedAvBal}`);
         }
@@ -34,7 +34,7 @@ document.getElementById('withdraw-button').addEventListener('click', function(e)
             const availableBal = Number(getInnerText('available-balance'));
             if(availableBal >= amount){
                 const updatedAvBal = availableBal - amount;
-                setInnerText('available-balance', updatedAvBal);
+                updateBalance(updatedAvBal);
                 getElement('cash-out-form').reset();
                 alert(`Withdraw $${amount} is successful`);
             } else{
@@ -55,7 +55,7 @@ document.getElementById('transfer-button').addEventListener('click', function(ev
             const availableBal = Number(getInnerText('available-balance'));
             if(availableBal >= amount){
                 const updatedAvBal = availableBal - amount;
-                setInnerText('available-balance', updatedAvBal);
+                updateBalance(updatedAvBal);
                 getElement('transfer-money-form').reset();
                 alert(`Amount $${amount} is succesfully Transferred to account no ${transferNumber}`);
             } else{
@@ -102,8 +102,8 @@ function validateAmount(amount){
 
 // validate pin
 function validatePin(pin){
-    const userPinCode = 1234;
-    if(pin === userPinCode){
+    const storedPin = Number(localStorage.getItem('pin') || '');
+    if(pin === storedPin){
         return true;
     }
     alert('Invalid Pin');
@@ -135,3 +135,12 @@ function getInnerText(id){
     const value = element.innerText;
     return value;
 }
+
+// update balance
+function updateBalance(balance){
+    setInnerText('available-balance', balance);
+    localStorage.setItem('balance', balance);
+}
+const storedAvBal = localStorage.getItem('balance') || 1000;
+// const storedAvBal = 1000;
+updateBalance(storedAvBal);

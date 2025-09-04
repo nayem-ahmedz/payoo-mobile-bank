@@ -13,15 +13,16 @@
     <header class="max-w-md mx-auto flex gap-2 items-center p-4 pt-6 border-b-1 border-gray-200 bg-white">
         <img src="../assets/Group.png" alt="logo" class="w-14">
         <div class="grow">
-            <h2 class="text-lg font-bold mb-1">$<span id="available-balance">45000</span></h2>
+            <h2 class="text-lg font-bold mb-1">$<span id="available-balance">0</span></h2>
             <p class="text-sm text-[rgba(8,8,8,0.5)]">Available Balance</p>
         </div>
-        <button class="btn btn-outline border-gray-200 text-[rgba(8,8,8,0.5)]"> <i class="fa-solid fa-arrow-right-from-bracket rotate-180 text-gray-600"></i> Log Out</button>
+        <button class="btn btn-outline border-gray-200 text-[rgba(8,8,8,0.5)] log-out-button"> <i class="fa-solid fa-arrow-right-from-bracket rotate-180 text-gray-600"></i> Log Out</button>
     </header>
     <main class="max-w-md mx-auto">
         <section class="rounded-b-3xl bg-white">
             <article class="p-4 pt-8">
-                <h2 class="text-2xl font-bold mb-2">🔥 Welcome to Payooo!</h2>
+                <h2 class="text-2xl font-medium mb-2">🔥 Welcome <span id="username">Guest</span> !</h2>
+                <h3 class="text-xl my-2">Payooo Mobile Bank</h3>
                 <p class="text-[rgba(8,8,8,0.5)]">Enjoy easy and convenient financial services with us. Cashout charge is
                     low and affordable</p>
                 <section class="grid grid-cols-3 gap-4 pt-6 pb-2 toggle-menue">
@@ -154,6 +155,7 @@
             </div>
         </section>
     </main>
+    <script src="../scripts/access.js"></script>
     <script src="../scripts/toggler-feature.js"></script>
     <script src="../scripts/money-operation.js"></script>
 </body>
